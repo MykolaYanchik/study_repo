@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    margin: 0;
+    background-color: darkblue;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.container,
+.container_btn {
+    background-color: darkgray;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.wrapper {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu_icon {
+	position: relative;
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+}
+
+.menu_icon::before {
+	position: absolute;
+	left: 0;
+	top: -10px;
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+	
+}
+
+.menu_icon::after {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu_icon.menu_icon_active {
+	background-color: transparent;
+}
+
+.menu_icon.menu_icon_active::before{
+	transform: rotate(45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu_icon.menu_icon_active::after{
+	transform: rotate(-45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
