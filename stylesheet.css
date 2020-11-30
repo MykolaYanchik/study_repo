@@ -1,0 +1,79 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gold;
+}
+
+.clock {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    position: relative;
+    background: url(img/clock.png) center/cover;
+}
+
+.clock::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rebeccapurple;
+    border-radius: 50%;
+    z-index: 10;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.hour{
+    width: 300px;
+    height: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+}
+
+.hour::after {
+    content: "";
+    width: 8px;
+    height: 150px;
+    background: black;
+    border-radius: 4px 4px 0 0;
+}
+
+.min{
+    width: 350px;
+    height: 350px;
+    top: calc(50% - 175px);
+    left: calc(50% - 175px);
+}
+
+.min::after {
+    content: "";
+    width: 6px;
+    height: 175px;
+    background: black;
+    border-radius: 3px 3px 0 0;
+}
+
+.sec{
+    width: 400px;
+    height: 400px;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+}
+
+.sec::after {
+    content: "";
+    width: 4px;
+    height: 235px;
+    background: red;
+}
